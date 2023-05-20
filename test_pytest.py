@@ -1,6 +1,7 @@
+import random
 import time
 
-import pytest, random
+import pytest
 from appium.webdriver.common.appiumby import AppiumBy
 
 

@@ -1,5 +1,10 @@
-import pytest, time, subprocess
+import subprocess
+import time
+
+import pytest
 from appium import webdriver
+
+appName = "cegao-1.0-2023-05-21-01-05-38"
 
 emulatorName = "emulator-5554"
 capabilities = {
@@ -9,7 +14,7 @@ capabilities = {
         "automationName": 'UiAutomator2',
         "deviceName": emulatorName,
         "platformVersion": "12",
-        "app": r"E:\github\HealthcareDetectionAndroid\app\build\outputs\apk\debug\cegao-1.0-2023-05-20-15-01-02.apk",
+        "app": rf"E:\github\HealthcareDetectionAndroid\app\build\outputs\apk\debug\{appName}.apk",
         "noReset": True,
         "unicodeKeyboard": True,
         "resetKeyboard": True,
