@@ -1,0 +1,2 @@
+# HealthDetectionAutoTest
+测高健康APP自动化测试
