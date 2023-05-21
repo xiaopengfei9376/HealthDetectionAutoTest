@@ -3,8 +3,14 @@ import time
 
 import pytest
 from appium import webdriver
+import os
 
-appName = "cegao-1.0-2023-05-21-01-05-38"
+appPath = r"E:\github\HealthcareDetectionAndroid\app\build\outputs\apk\debug"
+appName = "cegao-1.0-2023-05-21-03-53-49.apk"
+
+for f in os.listdir(appPath):
+    if f.endswith("apk"):
+        appName = f
 
 emulatorName = "emulator-5554"
 capabilities = {
@@ -14,7 +20,7 @@ capabilities = {
         "automationName": 'UiAutomator2',
         "deviceName": emulatorName,
         "platformVersion": "12",
-        "app": rf"E:\github\HealthcareDetectionAndroid\app\build\outputs\apk\debug\{appName}.apk",
+        "app": rf"{appPath}\{appName}",
         "noReset": True,
         "unicodeKeyboard": True,
         "resetKeyboard": True,
@@ -28,7 +34,7 @@ appium_server_url = 'http://localhost:4723'
 
 @pytest.fixture(scope='session')
 def app_run(request):
-    # subprocess.Popen(r"appium", shell=True)
+    subprocess.Popen(r"appium", shell=True)
     launched = False
     # 等待模拟器启动
     while True:
